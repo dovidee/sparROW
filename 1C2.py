@@ -1,3 +1,5 @@
+# 9.1.8.3 (egentlig 9.1.8.2 men dere har gjort feil)
+
 def all_z_words(wordlist : list) -> list:
     """Lag en liste med string som har Z"""
     zlist = []
