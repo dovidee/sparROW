@@ -1,3 +1,3 @@
 # sparrow
 
-![sparrow](images/sparrow.png)
+![sparrow](images/jar.png)
