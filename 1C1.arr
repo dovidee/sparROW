@@ -9,6 +9,7 @@ bunch_O_randomz = [list: 10, 14, 16, 19, 20, 22]
 bunch_O_evenz = [list: 10, 12, 14, 16, 18, 20]
 
 fun form-to-str(digits :: List) -> List<String>:
+  doc: "Tar tall i en liste og lager dem over til neg, zero eller pos i en liste"
   L.map(lam(elt): 
       if elt == 0:
         "zero"
@@ -24,6 +25,7 @@ where:
 end
 
 fun fiver(just-str :: List) -> List<Boolean>:
+  doc: "Tar string i en liste og sjekker om den er 5"
   L.map(lam(elt):
       string-length(elt) == 5
     end, just-str)
@@ -32,6 +34,7 @@ where:
 end
 
 fun is-even(digits :: List):
+  doc: "Filtrer kun partal tall i en liste med tall"
   L.filter(lam(elt):
       if member(bunch_O_evenz, elt):
         true
@@ -39,4 +42,6 @@ fun is-even(digits :: List):
         false
       end
     end, digits)
+where:
+  is-even([list: 10, 15, 20]) is [list: 10, 20]
 end
