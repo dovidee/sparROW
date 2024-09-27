@@ -1,3 +1,4 @@
+# 9.1.6.1
 def num_to_str(liste):
     ''' Ta en liste og lag tallene over til string i en ny liste'''
     empty = []
