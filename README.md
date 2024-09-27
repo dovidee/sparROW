@@ -1,2 +1,3 @@
 # sparrow
-Pyret programming practice
+
+![sparrow](images/sparrow.png)
