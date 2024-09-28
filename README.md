@@ -10,7 +10,7 @@ Confused?
 - 1C2.py: all_z_words, all_z_words_f
 - 1C3.py: room_size, change_size, min_size
 
-1C1.arr kan ignoreres! 
-Siden den er ikke en del av den originale oppgaven.
+1C1.arr og 2AB.arr kan ignoreres! 
+Siden oppgavene er dårlig forklart.
 
 ![sparrow](images/jar.png)
