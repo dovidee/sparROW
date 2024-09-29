@@ -16,6 +16,7 @@ Før installasjon, åpne terminalen og gå inn i sparrow/ direktoratet og skriv 
 - 1C3.py: room_size, change_size, min_size
 - 2AB.arr: highest, lowest *
 - 2ABCDEF.py: highest, lowest, meanest, highest_lowest_OVR, meanest_OVR
+- 2GH.py: kommune_pie, kommune_top10
 
 1C1.arr og 2AB.arr kan ignoreres! 
 
