@@ -1,4 +1,4 @@
-# Dette er feil oppgave
+# Dette er feil oppgave, gå til 2ABCDEF.py for riktig.
 
 include gdrive-sheets
 include tables
