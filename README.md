@@ -1,6 +1,11 @@
-# sparrow
+# sparROW
 
-Confused?
+# Installasjon
+
+Før installasjon, åpne terminalen og gå inn i sparrow/ direktoratet og skriv dette for dependencies:
+- pip install -r requirements.txt
+
+# Confused?
 
 - 1A.py: my_str_len, my_num_max
 - 1B.arr: check-group
