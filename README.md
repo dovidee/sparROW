@@ -1,9 +1,12 @@
 # sparROW
 
-# Installasjon
+# Dependencies
 
 Før installasjon, åpne terminalen og gå inn i sparrow/ direktoratet og skriv dette for dependencies:
 - pip install -r requirements.txt
+
+Den rensa dataen ligger i oppgave2.xlsx og oppgave2_rounded.xlsx
+Vennligst bruk rounded, men sammenlign med den andre hvis du har lyst.
 
 # Confused?
 
