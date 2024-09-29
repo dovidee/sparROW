@@ -3,20 +3,20 @@ import numpy as np
 exc1 = pd.read_excel("oppgave2.xlsx") 
 exc2 = pd.read_excel("oppgave2_rounded.xlsx") # Bruk denne 
 
-def highest(exc): # A
+def highest(exc) -> str: # A
     fixed = exc.replace(0, np.nan) # Fjern null
     highest_column = fixed.sort_values(['Y2023'], ascending=False) # Sorter høy
     # Ta første navn og første rad av Sted og 2023
     print(f"Høyeste gjennomsnitt i 2023 er {highest_column['Sted'].iloc[0]} med {round(highest_column['Y2023'].iloc[0])} prosent") 
 
-def lowest(exc): # B
+def lowest(exc) -> str: # B
     fixed = exc.replace(0, np.nan) # Fjern null
     lowest_column = fixed.sort_values(['Y2023'], ascending=True) # Sorter lav
     # Ta første navn og første rad av Sted og 2023
     print(f"Laveste gjennomsnitt i 2023 er{lowest_column['Sted'].iloc[0]} med {round(lowest_column['Y2023'].iloc[0])} prosent")
     # Bruk print(lowest_column.head(10)) for å se duplikater
 
-def meanest(exc): # C
+def meanest(exc) -> str: # C
     fixed = exc.replace(0, np.nan) # Fjern null
     fixed['mean'] = fixed.iloc[:, 1:].mean(axis=1) # Legg til en ny kolonne med mean
     highest_column = fixed.sort_values(['mean'], ascending=False) # Sorter høy mean
@@ -24,7 +24,7 @@ def meanest(exc): # C
     print(f"Høyeste gjennomsnittlige prosenten er {highest_column['Sted'].iloc[0]} med {round(highest_column['mean'].iloc[0])} prosent")
     print(f"Laveste gjennomsnittlige prosenten er{lowest_column['Sted'].iloc[0]}med {round(lowest_column['mean'].iloc[0])} prosent")
 
-def highest_lowest_OVR(exc): # D og E
+def highest_lowest_OVR(exc) -> str: # D og E
     fixed = exc.replace(0, np.nan) # Fjern null
     fixed['highest'] = fixed.iloc[:, 1:].max(axis=1) # Legg til en ny kolonne med høyest
     fixed['lowest'] = fixed.iloc[:, 1:].min(axis=1) # Legg til en ny kolonne med lavest
@@ -34,7 +34,7 @@ def highest_lowest_OVR(exc): # D og E
     print(f"Høyeste gjennomsnittlige prosent er {highest_column['Sted'].iloc[0]} med {round(highest_column['highest'].iloc[0])} prosent")
     print(f"Laveste gjennomsnittlige prosent er{lowest_column['Sted'].iloc[0]} med {round(lowest_column['lowest'].iloc[0])}")
 
-def meanest_OVR(exc): # F
+def meanest_OVR(exc) -> str: # F
     fixed = exc.replace(0, np.nan) # Fjern null
     fixed['mean'] = fixed.iloc[:, 1:].mean(axis=1) # Legg til en ny kolonne med mean
     print("Gjennomsnittlig prosent for alle kommuner mellom 2015 og 2023:" + "\n" f"{fixed}") # Vis all data
