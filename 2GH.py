@@ -7,8 +7,8 @@ exc1 = pd.read_excel("oppgave2.xlsx")
 exc2 = pd.read_excel("oppgave2_rounded.xlsx") # Bruk denne
 
 def kommune_pie(kommune, exc) -> None:
-    x = exc['Sted'].str.fullmatch(kommune)
-    chosen = exc.loc[x[x].index] # Boolean indexing til å finne kommune index (wtf?)
+    matched = exc['Sted'].str.fullmatch(kommune)
+    chosen = exc.loc[matched[matched].index] # Boolean indexing til å finne kommune index (wtf?)
     to_flatten = chosen.values.tolist() # Velg tallene
     reduced_row = reduce(lambda x,y: x+y, to_flatten) # Fjern listen ut av listen med flatten
     reduced_row.pop(0) # Fjern kommunen
