@@ -5,10 +5,13 @@
 Før installasjon, åpne terminalen og gå inn i sparrow/ direktoratet og skriv dette for dependencies:
 - pip install -r requirements.txt
 
-Den rensa dataen ligger i oppgave2.xlsx og oppgave2_rounded.xlsx. Bruk rounded.
-
 # Confused?
 
+Bilder
+- For oppgave 1, finner du bildene i images
+- For oppgave 2, finner du bildene i images2
+
+Funksjon navn
 - 1A.py: my_str_len, my_num_max
 - 1B.arr: check-group
 - 1B.py: check_group
