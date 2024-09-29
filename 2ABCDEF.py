@@ -3,13 +3,13 @@ import numpy as np
 exc1 = pd.read_excel("oppgave2.xlsx") 
 exc2 = pd.read_excel("oppgave2_rounded.xlsx") # Bruk denne 
 
-def highest(exc) -> str: # A
+def highest(exc : dict) -> str: # A
     fixed = exc.replace(0, np.nan) # Fjern null
     highest_column = fixed.sort_values(['Y2023'], ascending=False) # Sorter høy
     # Ta første navn og første rad av Sted og 2023
     print(f"Høyeste gjennomsnitt i 2023 er {highest_column['Sted'].iloc[0]} med {round(highest_column['Y2023'].iloc[0])} prosent") 
 
-def lowest(exc) -> str: # B
+def lowest(exc : dict) -> str: # B
     fixed = exc.replace(0, np.nan) # Fjern null
     lowest_column = fixed.sort_values(['Y2023'], ascending=True) # Sorter lav
     # Ta første navn og første rad av Sted og 2023
@@ -19,15 +19,15 @@ def lowest(exc) -> str: # B
 # C gir ingen mening siden det er en duplikat av E men riktig ordbruk er "prosenten" i både D og E. 
 # Høyste eller høyeste?
 
-def meanest(exc) -> str: # D og E
+def meanest(exc : dict) -> str: # D og E
     fixed = exc.replace(0, np.nan) # Fjern null
     fixed['mean'] = fixed.iloc[:, 1:].mean(axis=1) # Legg til en ny kolonne med mean
     highest_column = fixed.sort_values(['mean'], ascending=False) # Sorter høy mean
     lowest_column = fixed.sort_values(['mean'], ascending=True) # Sorter lav mean
     print(f"Høyeste gjennomsnittlige prosenten er {highest_column['Sted'].iloc[0]} med {round(highest_column['mean'].iloc[0])} prosent")
-    print(f"Laveste gjennomsnittlige prosenten er{lowest_column['Sted'].iloc[0]}med {round(lowest_column['mean'].iloc[0])} prosent")
+    print(f"Laveste gjennomsnittlige prosenten er {lowest_column['Sted'].iloc[0]}med {round(lowest_column['mean'].iloc[0])} prosent")
 
-def meanest_OVR(exc) -> str: # F
+def meanest_OVR(exc : dict) -> str: # F
     fixed = exc.replace(0, np.nan) # Fjern null
     fixed['mean'] = fixed.iloc[:, 1:].mean(axis=1) # Legg til en ny kolonne med mean
     print("Gjennomsnittlig prosent for alle kommuner mellom 2015 og 2023:" + "\n" f"{fixed}") # Vis all data
