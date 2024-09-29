@@ -1,5 +1,4 @@
-# 9.1.6.1
-def num_to_str(liste):
+def num_to_str(liste : list) -> list:
     ''' Ta en liste og lag tallene over til string i en ny liste'''
     empty = []
     for element in liste:
@@ -18,7 +17,7 @@ test3 = num_to_str([-1])
 
 print(num_to_str([-1, 0, 1, -0.4])) # ['neg', 'zero', 'pos', 'zero']
 
-def find_str_len(liste):
+def find_str_len(liste : list) -> list:
     ''' Ta en liste og sjekk hvis den har tallet 5 '''
     for element in liste:
         if len(element) == 5: # Sjekk hvis lengden av elementet er lik 5
@@ -28,7 +27,7 @@ def find_str_len(liste):
 
 print(find_str_len(["a", "bb", "ccccc"])) # True
 
-def even_num(liste):
+def even_num(liste : list) -> list:
     ''' Finn partal av en liste mellom 10 og 20 og lag ny liste'''
     empty = []
     for element in liste:
