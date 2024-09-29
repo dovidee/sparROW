@@ -1,8 +1,8 @@
 import altair as alt
 import pandas as pd
 import numpy as np
-
 from functools import reduce
+
 exc1 = pd.read_excel("oppgave2.xlsx")
 exc2 = pd.read_excel("oppgave2_rounded.xlsx") # Bruk denne
 
