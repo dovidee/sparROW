@@ -16,23 +16,16 @@ def lowest(exc) -> str: # B
     print(f"Laveste gjennomsnitt i 2023 er{lowest_column['Sted'].iloc[0]} med {round(lowest_column['Y2023'].iloc[0])} prosent")
     # Bruk print(lowest_column.head(10)) for å se duplikater
 
-def meanest(exc) -> str: # C
+# C gir ingen mening siden det er en duplikat av E men riktig ordbruk er "prosenten" i både D og E. 
+# Høyste eller høyeste?
+
+def meanest(exc) -> str: # D og E
     fixed = exc.replace(0, np.nan) # Fjern null
     fixed['mean'] = fixed.iloc[:, 1:].mean(axis=1) # Legg til en ny kolonne med mean
     highest_column = fixed.sort_values(['mean'], ascending=False) # Sorter høy mean
     lowest_column = fixed.sort_values(['mean'], ascending=True) # Sorter lav mean
     print(f"Høyeste gjennomsnittlige prosenten er {highest_column['Sted'].iloc[0]} med {round(highest_column['mean'].iloc[0])} prosent")
     print(f"Laveste gjennomsnittlige prosenten er{lowest_column['Sted'].iloc[0]}med {round(lowest_column['mean'].iloc[0])} prosent")
-
-def highest_lowest_OVR(exc) -> str: # D og E
-    fixed = exc.replace(0, np.nan) # Fjern null
-    fixed['highest'] = fixed.iloc[:, 1:].max(axis=1) # Legg til en ny kolonne med høyest
-    fixed['lowest'] = fixed.iloc[:, 1:].min(axis=1) # Legg til en ny kolonne med lavest
-    highest_column = fixed.sort_values(['highest'], ascending=False) # Sorter høy overall
-    lowest_column = fixed.sort_values(['lowest'], ascending=True) # Sorter lav overall
-    # Ta første navn og første rad av high/low raden
-    print(f"Høyeste gjennomsnittlige prosent er {highest_column['Sted'].iloc[0]} med {round(highest_column['highest'].iloc[0])} prosent")
-    print(f"Laveste gjennomsnittlige prosent er{lowest_column['Sted'].iloc[0]} med {round(lowest_column['lowest'].iloc[0])}")
 
 def meanest_OVR(exc) -> str: # F
     fixed = exc.replace(0, np.nan) # Fjern null
@@ -42,5 +35,4 @@ def meanest_OVR(exc) -> str: # F
 highest(exc2)
 lowest(exc2)
 meanest(exc2)
-highest_lowest_OVR(exc2)
 meanest_OVR(exc2)
