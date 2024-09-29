@@ -6,7 +6,7 @@ from functools import reduce
 exc1 = pd.read_excel("oppgave2.xlsx")
 exc2 = pd.read_excel("oppgave2_rounded.xlsx") # Bruk denne
 
-def select(kommune, exc) -> None:
+def kommune_pie(kommune, exc) -> None:
     exc = pd.read_excel("oppgave2_rounded.xlsx") # Bruk denne
     x = exc['Sted'].str.fullmatch(kommune)
     chosen = exc.loc[x[x].index] # Boolean indexing til å finne kommune index (wtf?)
@@ -32,7 +32,7 @@ def select(kommune, exc) -> None:
     device_chart = alt.layer(pie, text) # Legg til teksten i radiusen utenfor
     device_chart.save(f"{kommune}.html") # Lagre chart i html
 
-def top10(exc) -> None:
+def kommune_top10(exc) -> None:
     fixed = exc.replace(0, np.nan) # Fjern null
     fixed_again = fixed.dropna() # Fjern alle rader med ingen data
     fixed_again['mean'] = fixed_again.iloc[:, 1:].mean(axis=1) # Lag ny rad med gjennomsnitt
@@ -63,5 +63,5 @@ def top10(exc) -> None:
     device_chart.save(f"top10.html") # Lagre chart i html
 
 # ignorer SettingWithCopyWarning, bare bruk 1 funksjon om gangen
-select("Kristiansand", exc2)
-top10(exc2)
+kommune_pie("Kristiansand", exc2)
+kommune_top10(exc2)
