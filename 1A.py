@@ -1,4 +1,4 @@
-def my_str_len(l):
+def my_str_len(l : list) -> list:
     for i in l:
         return len(i)
 
@@ -7,7 +7,7 @@ def test_my_str_len():
 
 test_my_str_len() # Error om assert value blir endret
 
-def my_num_max(l):
+def my_num_max(l : list) -> list:
     return max(l)
         
 def test_my_num_max():
