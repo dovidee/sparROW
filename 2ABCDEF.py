@@ -27,12 +27,11 @@ def meanest(exc : dict) -> str: # D og E
     print(f"Høyeste gjennomsnittlige prosenten er {highest_column['Sted'].iloc[0]} med {round(highest_column['mean'].iloc[0])} prosent")
     print(f"Laveste gjennomsnittlige prosenten er {lowest_column['Sted'].iloc[0]}med {round(lowest_column['mean'].iloc[0])} prosent")
 
-def meanest_OVR(exc : dict) -> str: # F
-    fixed = exc.replace(0, np.nan) # Fjern null
-    fixed['mean'] = fixed.iloc[:, 1:].mean(axis=1) # Legg til en ny kolonne med mean
-    print("Gjennomsnittlig prosent for alle kommuner mellom 2015 og 2023:" + "\n" f"{fixed}") # Vis all data
+def meanest_OVR(exc : dict, year : str) -> str: # F
+    result = round(exc[year].mean())
+    print(f"Gjennomsnittlig prosent for {year} er {result}")
     
 highest(exc2)
 lowest(exc2)
 meanest(exc2)
-meanest_OVR(exc2)
+meanest_OVR(exc2, 'Y2023')
