@@ -7,13 +7,13 @@ def highest(exc : dict) -> str: # A
     fixed = exc.replace(0, np.nan) # Fjern null
     highest_column = fixed.sort_values(['Y2023'], ascending=False) # Sorter høy
     # Ta første navn og første rad av Sted og 2023
-    print(f"Høyeste gjennomsnitt i 2023 er {highest_column['Sted'].iloc[0]} med {round(highest_column['Y2023'].iloc[0])} prosent") 
+    print(f"Høyeste prosenten i 2023 er {highest_column['Sted'].iloc[0]} med {round(highest_column['Y2023'].iloc[0])} prosent") 
 
 def lowest(exc : dict) -> str: # B
     fixed = exc.replace(0, np.nan) # Fjern null
     lowest_column = fixed.sort_values(['Y2023'], ascending=True) # Sorter lav
     # Ta første navn og første rad av Sted og 2023
-    print(f"Laveste gjennomsnitt i 2023 er{lowest_column['Sted'].iloc[0]} med {round(lowest_column['Y2023'].iloc[0])} prosent")
+    print(f"Laveste prosenten i 2023 er{lowest_column['Sted'].iloc[0]} med {round(lowest_column['Y2023'].iloc[0])} prosent")
     # Bruk print(lowest_column.head(10)) for å se duplikater
 
 # C gir ingen mening siden det er en duplikat av E men riktig ordbruk er "prosenten" i både D og E. 
