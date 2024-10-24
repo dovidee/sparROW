@@ -24,7 +24,7 @@ def kommune_pie(kommune : str, exc : dict) -> None:
             radius=100, 
             size=10,
         ).encode( 
-            text=alt.Text("perc",format=".2%",), # Prosent format
+            text=alt.Text("perc"), # Prosent format
             color=alt.value("#605E5C"),
             tooltip=alt.Text("År"),
         )
@@ -54,7 +54,7 @@ def kommune_top10(exc : dict) -> None:
             radius=100, 
             size=10,
         ).encode( 
-            text=alt.Text("Gjennomsnitt",format=".2%",), # Prosent format
+            text=alt.Text("Gjennomsnitt"), # Prosent format
             color=alt.value("#605E5C"),
             tooltip=alt.Text("Kommune"),
         )
