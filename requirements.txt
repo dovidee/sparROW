@@ -2,4 +2,4 @@ pandas
 numpy
 openpyxl
 IPython
-altair
+altair<5
