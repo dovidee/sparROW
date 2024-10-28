@@ -1,12 +1,12 @@
-#  ! VIKTIG !
-Bruk python 3.13 og installer dependencies.
-Noe rart skjedde med 3.14 som fører til en TypeError: _TypedDictMeta.__new__() got an unexpected keyword argument 'closed' altair error
-Går ikke ann å fikses før de fikser pyarrow i November.
-
 # Dependencies
 
 Før installasjon, åpne terminalen og gå inn i sparrow/ direktoratet og skriv dette for dependencies:
 - pip install -r requirements.txt
+
+På grunn av dette:
+https://discuss.streamlit.io/t/modulenotfounderror-no-module-named-altair-vegalite-v4/45915
+
+Bruk heller pip install "altair<5" enn å bruke den nye versjonen.
 
 # Confused?
 
