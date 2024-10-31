@@ -32,10 +32,9 @@ def kommune_pie(kommune : str, exc : dict) -> None:
     device_chart.save(f"{kommune}.html") # Lagre chart i html
 
 def kommune_top10(exc : dict) -> None:
-    fixed = exc.replace(0, np.nan) # Fjern null
-    fixed_again = fixed.dropna() # Fjern alle rader med ingen data
-    fixed_again['mean'] = fixed_again.iloc[:, 1:].mean(axis=1) # Lag ny rad med gjennomsnitt
-    highest_column = fixed_again.sort_values(['mean'], ascending=False) # Sorter rad etter høyeste
+    fixed = exc[(exc != 0).all(1)] # FJERN NULL FOR REAL
+    fixed['mean'] = fixed.iloc[:, 1:].mean(axis=1) # Lag ny rad med gjennomsnitt
+    highest_column = fixed.sort_values(['mean'], ascending=False) # Sorter rad etter høyeste
     top_10 = highest_column.head(11) # Top 10 Communities Of All Time
     top_10_places = []
     top_10_mean = []
