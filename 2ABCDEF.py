@@ -4,7 +4,7 @@ exc1 = pd.read_excel("oppgave2.xlsx")
 exc2 = pd.read_excel("oppgave2_rounded.xlsx") # Bruk denne 
 
 def highest(exc : dict) -> str: # A
-    fixed = exc.replace(0, np.nan) # Fjern null
+    fixed = exc[(exc != 0).all(1)]
     highest_column = fixed.sort_values(['Y2023'], ascending=False) # Sorter høy
     # Ta første navn og første rad av Sted og 2023
     print(f"Høyeste prosenten i 2023 er {highest_column['Sted'].iloc[0]} med {round(highest_column['Y2023'].iloc[0])} prosent") 
@@ -20,7 +20,7 @@ def lowest(exc : dict) -> str: # B
 # Høyste eller høyeste?
 
 def meanest(exc : dict) -> str: # D og E
-    fixed = exc.replace(0, np.nan) # Fjern null
+    fixed = exc[(exc != 0).all(1)]
     fixed['mean'] = fixed.iloc[:, 1:].mean(axis=1) # Legg til en ny kolonne med mean
     highest_column = fixed.sort_values(['mean'], ascending=False) # Sorter høy mean
     lowest_column = fixed.sort_values(['mean'], ascending=True) # Sorter lav mean
