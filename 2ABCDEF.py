@@ -10,7 +10,7 @@ def highest(exc : dict) -> str: # A
     print(f"Høyeste prosenten i 2023 er {highest_column['Sted'].iloc[0]} med {round(highest_column['Y2023'].iloc[0])} prosent") 
 
 def lowest(exc : dict) -> str: # B
-    fixed = exc.replace(0, np.nan) # Fjern null
+    fixed = exc[(exc != 0).all(1)]
     lowest_column = fixed.sort_values(['Y2023'], ascending=True) # Sorter lav
     # Ta første navn og første rad av Sted og 2023
     print(f"Laveste prosenten i 2023 er{lowest_column['Sted'].iloc[0]} med {round(lowest_column['Y2023'].iloc[0])} prosent")
